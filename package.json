@@ -1,0 +1,28 @@
+{
+  "name": "salvahbot",
+  "version": "1.0.0",
+  "description": "Telegram bot made using telebot wrapper",
+  "main": "bot.js",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "telebot": "^1.4.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node bot.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/francescoTenace/SalvahBot.git"
+  },
+  "keywords": [
+    "Telegram",
+    "node"
+  ],
+  "author": "Francesco Tenace",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/francescoTenace/SalvahBot/issues"
+  },
+  "homepage": "https://github.com/francescoTenace/SalvahBot#readme"
+}
