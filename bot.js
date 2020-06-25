@@ -3,8 +3,8 @@ const dotenv = require("dotenv");
 dotenv.config();
 const bot = new Telebot({
   token: process.env.TOKEN,
-  polling: {
-    interval: 100,
+  webhook: {
+    port: process.env.PORT,
   },
 });
 const _ = require("lodash");
