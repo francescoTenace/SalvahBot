@@ -4,7 +4,7 @@ dotenv.config();
 const bot = new Telebot({
   token: process.env.TOKEN,
   webhook: {
-    url: 'http://salvahbot.herokuapp.com',
+    url: 'https://salvahbot.herokuapp.com',
     port: process.env.PORT,
   },
 });
