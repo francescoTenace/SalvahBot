@@ -22,12 +22,14 @@ bot.on("text", (msg) => {
   if (msg.text.test(regex)) {
     let laughter = msg.text.match(regex);
     let basedLaughter = 'mp' + 'f'.repeat(laughter[0].length - 2);
-    basedLaughter = laughter[0] === laughter[0].toUpperCase() 
+    basedLaughter = laughter[0] === laughter[0].toUpperCase()
       ? basedLaughter.toUpperCase()
       : basedLaughter;
-    return msg.reply.text(
-      's' + regex.toString().replace('i', '') + basedLaughter + '/i',
-      { asReply: true }
+    let message = 's' + regex.toString().replace('i', '') + basedLaughter + '/i';
+    return bot.sendMessage(
+      msg.from.id,
+      message,
+      { replyToMessage: msg.message_id }
     );
   }
 });
