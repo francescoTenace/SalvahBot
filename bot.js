@@ -27,9 +27,14 @@ bot.on("text", (msg) => {
       : basedLaughter;
     let message = 's' + regex.toString().replace('i', '') + basedLaughter + '/i';
     return bot.sendMessage(
-      msg.from.id,
+      msg.chat.id,
       message,
       { replyToMessage: msg.message_id }
+    );
+  } else if (msg.from.id == 233861389) {
+    return msg.reply.text(
+      "ok",
+      { asReply: true }
     );
   }
 });
