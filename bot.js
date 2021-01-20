@@ -17,6 +17,21 @@ bot.on("/start", (msg) => {
   );
 });
 
+bot.on("text", (msg) => {
+  const regex = /^[ah]{5,}$/i;
+  if (msg.text.test(regex)) {
+    let laughter = msg.text.match(regex);
+    let basedLaughter = 'mp' + 'f'.repeat(laughter[0].length - 2);
+    basedLaughter = laughter[0] === laughter[0].toUpperCase() 
+      ? basedLaughter.toUpperCase()
+      : basedLaughter;
+    return msg.reply.text(
+      's' + regex.toString().replace('i', '') + basedLaughter + '/i',
+      { asReply: true }
+    );
+  }
+});
+
 bot.on("document", (msg) => {
   if (msg.from.id == 399723709) {
     if (msg.document.mime_type == "video/mp4") {
