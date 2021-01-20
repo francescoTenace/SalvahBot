@@ -19,7 +19,7 @@ bot.on("/start", (msg) => {
 
 bot.on("text", (msg) => {
   const regex = /^[ah]{5,}$/i;
-  if (msg.text.test(regex)) {
+  if ((regex).test(msg.text.toString())) {
     let laughter = msg.text.match(regex);
     let basedLaughter = 'mp' + 'f'.repeat(laughter[0].length - 2);
     basedLaughter = laughter[0] === laughter[0].toUpperCase()
@@ -30,11 +30,6 @@ bot.on("text", (msg) => {
       msg.chat.id,
       message,
       { replyToMessage: msg.message_id }
-    );
-  } else if (msg.from.id == 233861389) {
-    return msg.reply.text(
-      "ok",
-      { asReply: true }
     );
   }
 });
