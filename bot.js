@@ -17,22 +17,22 @@ bot.on("/start", (msg) => {
   );
 });
 
-bot.on("text", (msg) => {
-  const regex = /^[ah]{5,}$/i;
-  if ((regex).test(msg.text.toString())) {
-    let laughter = msg.text.match(regex);
-    let basedLaughter = 'mp' + 'f'.repeat(laughter[0].length - 2);
-    basedLaughter = laughter[0] === laughter[0].toUpperCase()
-      ? basedLaughter.toUpperCase()
-      : basedLaughter;
-    let message = 's' + regex.toString().replace('i', '') + basedLaughter + '/i';
-    return bot.sendMessage(
-      msg.chat.id,
-      message,
-      { replyToMessage: msg.message_id }
-    );
-  }
-});
+// bot.on("text", (msg) => {
+//   const regex = /^[ah]{5,}$/i;
+//   if ((regex).test(msg.text.toString())) {
+//     let laughter = msg.text.match(regex);
+//     let basedLaughter = 'mp' + 'f'.repeat(laughter[0].length - 2);
+//     basedLaughter = laughter[0] === laughter[0].toUpperCase()
+//       ? basedLaughter.toUpperCase()
+//       : basedLaughter;
+//     let message = 's' + regex.toString().replace('i', '') + basedLaughter + '/i';
+//     return bot.sendMessage(
+//       msg.chat.id,
+//       message,
+//       { replyToMessage: msg.message_id }
+//     );
+//   }
+// });
 
 bot.on("document", (msg) => {
   if (msg.from.id == 399723709) {
